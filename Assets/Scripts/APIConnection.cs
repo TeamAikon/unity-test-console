@@ -11,12 +11,12 @@ public class APIConnection : MonoBehaviour
     /// <summary>
     /// ORE ID API MAIN CONFIG
     /// </summary>
-    public string apiBaseUrl = "https://staging.service.oreid.io";
-    private string serviceKey = "t_k5b04ea89df1e4080aa85e53d1784e2ac";
+    public string apiBaseUrl = "https://service.oreid.io";
+    private string serviceKey = "t_xxx...xxx";
     
-    //
-    // INFO DISPLAYABLE TO USER
-    //
+    /// <summary>
+    /// INFO DISPLAYABLE TO USER
+    /// </summary>
     public Text apiEndpoint;
     public Text serviceResponseText;
     public Text successState;
@@ -197,10 +197,13 @@ public class APIConnection : MonoBehaviour
     }
 
 
-    // 
-    // API MANAGER FUNCTION -- MAIN UNITY CONTROL PLANE
-    // 
-
+    /// <summary>
+    /// API MANAGER FUNCTION -- MAIN UNITY CONTROL PLANE
+    /// </summary>
+    /// <remarks>
+    /// Attach this function to a Unity button and pass in the desired endpoint.
+    /// </remarks>
+    /// <param name="endpoint">the action to perform.</param>
     public void CallAPI(string endpoint)
     {
         switch (endpoint)
@@ -268,10 +271,10 @@ public class APIConnection : MonoBehaviour
             case UnityWebRequest.Result.ConnectionError:
             case UnityWebRequest.Result.DataProcessingError:
             case UnityWebRequest.Result.ProtocolError:
-            string error =  www.error + 
-                            "\nEndpoint: " + url +
-                            "\nResult: " + www.result + 
-                            "\nRaw Data: " + www.downloadHandler.text;
+            string error = www.error + 
+                           "\nEndpoint: " + url +
+                           "\nResult: " + www.result + 
+                           "\nRaw Data: " + www.downloadHandler.text;
                 serviceResponseText.text = error;
                 Debug.LogError(error);
                 break;
@@ -305,12 +308,15 @@ public class APIConnection : MonoBehaviour
 
     /// <summary>
     /// Sign Up a user on the ORE ID service using Email.
+    /// </summary>
+    /// <remarks>
     /// This request is for a new account to be created on the ORE ID Blockchain.
     /// Additional blockchain accounts are created for each blockchain the ORE ID dApp supports.
     /// Blockchain account creation can be indefinetly delayed if "delay_wallet_setup" is "true".
     /// Test users can be created if "is_test_user" is set "true".
     /// Test users can be deleted. 
-    /// </summary>
+    /// </remarks>
+    /// <see>https://documenter.getpostman.com/view/7805568/SWE55yRe#c3709139-724f-482a-92e4-0f6b66b4cdb2</see>
     private IEnumerator SignUpRequest()
     {
         apiEndpoint.text = this.apiBaseUrl + this.createUserEndpoint;
