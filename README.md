@@ -13,7 +13,7 @@ This project lays the groundwork for implementing blockchain actions within the 
 
 * [ORE ID Unity Integration documentation](https://docs.oreid.io/ore-id/build/integration/unity)
 * [ORE ID Custodial API documentation](https://docs.oreid.io/ore-id/build/features/custodial)
-* [ORE ID Custodial API Postman documentation](https://documenter...)
+* [ORE ID Custodial API Postman documentation](https://documenter.getpostman.com/view/7805568/SWE55yRe#eff54202-abd1-4f0c-93d1-237eb660fe27)
 
 
 ## Prerequisites
