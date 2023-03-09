@@ -19,7 +19,7 @@ This project lays the groundwork for implementing blockchain actions within the 
 ## Prerequisites
 
 1. Register an ORE ID dApp using the [developer dashboard](https://oreid.io/developer/new-app).
-2. Contact [ORE ID support](https://support.aikon.com) to register your dAPP for Custodial Functionality.  A service-key is required to call the ORE ID Custodial API.
+2. Request a service-key by opening a ticket on [ORE ID support](https://teamaikon.atlassian.net/servicedesk/customer/portal/1/group/8/create/27) You will need to enter the Application ID of the dApp created in step one.  Our team will issue you a service-key.
 
 
 ## Running the sample app
